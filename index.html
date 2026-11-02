@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I AM — IAM Interview Playbook</title>
+  <meta name="description" content="Interactive visual study guide for IAM interviews">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-button menu-button" id="menuButton" aria-label="Open topic menu">☰</button>
+    <a class="brand" href="#top"><span class="brand-mark">I AM</span><span>IAM Interview Playbook</span></a>
+    <label class="search-wrap" aria-label="Search topics">
+      <span>⌕</span>
+      <input id="searchInput" type="search" placeholder="Search 292 topics…">
+      <kbd>/</kbd>
+    </label>
+    <button class="icon-button" id="themeButton" aria-label="Toggle color theme">◐</button>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-heading">
+      <div><span class="eyebrow">Study library</span><strong id="topicCount">292 topics</strong></div>
+      <button class="icon-button close-button" id="closeButton" aria-label="Close menu">×</button>
+    </div>
+    <nav id="categoryNav" class="category-nav" aria-label="Topic categories"></nav>
+  </aside>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div>
+        <span class="eyebrow">INTERVIEW MASTER PLAN</span>
+        <h1>Understand IAM.<br><em>Show your thinking.</em></h1>
+        <p>Explore identity concepts through clear definitions, architecture flows, configuration steps, failure modes, and interview-ready answers.</p>
+      </div>
+      <div class="hero-stat">
+        <strong id="heroCount">292</strong>
+        <span>topics to master</span>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <small><b id="masteredCount">0</b> reviewed</small>
+      </div>
+    </section>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="all">All topics</button>
+      <button class="filter" data-category="fundamentals">Fundamentals</button>
+      <button class="filter" data-category="protocol">Protocols</button>
+      <button class="filter" data-category="iga">IGA</button>
+      <button class="filter" data-category="product">Products</button>
+      <button class="filter" data-category="pam">PAM</button>
+      <button class="filter" data-category="incident">Incidents</button>
+      <button class="filter" data-category="scenario">Scenarios</button>
+    </div>
+
+    <section class="topic-grid" id="topicGrid" aria-live="polite"></section>
+
+    <section class="topic-view" id="topicView" hidden>
+      <button class="back-button" id="backButton">← All topics</button>
+      <div id="topicDetail"></div>
+    </section>
+  </main>
+
+  <div class="scrim" id="scrim"></div>
+  <script src="app.js"></script>
+</body>
+</html>
