@@ -776,11 +776,11 @@ const introPitches = [
     minutes: "~1 min",
     lead: "Use this as your quick opener, then go deep on whichever domain the role emphasizes.",
     paragraphs: [
-      "I am an Identity and Access Management engineer with experience across identity governance, access management, privileged access management, and ICAM. My work focuses on ensuring that employees, contractors, applications, and services receive the correct access based on verified identity, business need, and least-privilege principles.",
-      "I combine architecture and operational experience. I have designed IAM processes and integrations, automated joiner, mover, and leaver workflows, implemented MFA, supported access reviews, and investigated authentication and authorization failures. I can consider an IAM program from both a design perspective and a day-to-day operations perspective.",
-      "My approach is to start with a trusted identity source, apply clear policies, automate lifecycle events, and maintain evidence for review and audit. I also monitor outcomes, reconcile target-system state, and troubleshoot access from the initiating event through the identity platform and final application."
+      "I am an Identity and Access Management engineer with experience in [add the IAM areas and years that accurately reflect your background]. My work has focused on ensuring that employees, contractors, applications, and service accounts receive the correct access through a controlled, auditable process.",
+      "I approach IAM across its full lifecycle. I work with authoritative identity sources, automate joiner, mover, and leaver events, manage authentication and authorization, govern access, and protect privileged credentials. I also investigate failures by tracing one transaction across the source, IAM platform, policy decision, target system, and audit logs.",
+      "My experience includes [add verified examples such as an IGA implementation, SSO integration, MFA rollout, privileged account onboarding, or ICAM project]. For example, [briefly describe the problem, your responsibilities, the action you took, and the result]. That combination of architecture, implementation, and operations is how I contribute in an IAM environment."
     ],
-    closer: "Then pivot: \"Depending on what matters most for this role, I can go deeper on governance, access management, privileged access, or ICAM — where would you like me to start?\""
+    closer: "Then pivot: \"Depending on the priorities for this role, I can discuss identity governance, access management, privileged access, or ICAM in more detail.\""
   },
   {
     key: "iga",
@@ -789,14 +789,14 @@ const introPitches = [
     minutes: "~5 min",
     lead: "Lead with this for governance-heavy roles (SailPoint, Saviynt, access reviews, SOX).",
     paragraphs: [
-      "Identity governance answers two important questions: who should have access, and who approved that access? IGA connects identity data, access policy, lifecycle events, reviews, and audit evidence.",
-      "In my experience, a governance program should begin with trusted identity data. I align authoritative attributes with the relevant HR source, use a stable identifier for correlation, and reconcile accounts across target systems. This creates a reliable identity record on which roles and access certifications can depend.",
-      "Joiner, mover, and leaver events are where governance produces measurable results. Joiners receive approved birthright access, movers have old access removed as well as new access granted, and leavers are disabled according to service-level targets. I would use connectors or APIs to fulfill each action and reconcile the final state.",
-      "The access model should also be understandable to business reviewers. I use business roles or access profiles that group technical entitlements, describe each entitlement in plain language, and assign owners and risk ratings. Reviews should focus on the access that is sensitive, unusual, or recently changed, rather than presenting every entitlement as a rubber stamp.",
-      "Governance controls should include preventive separation-of-duties checks, periodic access certifications, exception approvals, and completed remediation. Audit evidence should show who requested access, who approved it, when it changed, what was fulfilled, and whether access was reviewed.",
-      "My example result is [reduction in manual processing, improvement in provisioning time, or reduction in audit findings]. I would describe the specific tools, environment, and metrics from my own experience rather than presenting an estimated result as fact."
+      "My IGA experience focuses on controlling access through the complete identity lifecycle and producing reliable evidence for audit and business review. IGA answers who should have access, why they need it, who approved it, and whether it was fulfilled correctly.",
+      "I begin with a trusted identity source, usually HR, and define the attributes that drive identity creation, correlation, lifecycle actions, and access assignments. I use a stable, immutable identifier for correlation and reconcile the identity platform with Active Directory, cloud directories, and applications. This prevents duplicate identities and ensures that governance decisions use accurate data.",
+      "Joiner, mover, and leaver events are central to my lifecycle design. I grant approved birthright access to joiners, remove obsolete access when employees change roles, and disable and deprovision leaver accounts according to defined service-level targets. Connectors or APIs fulfill the actions, and reconciliation confirms the resulting state in each target.",
+      "I also design access using business roles, access profiles, and technical entitlements. Each entitlement has a clear business description, owner, and risk rating. This gives managers enough information to make meaningful request and certification decisions rather than approving technical group names without context.",
+      "My governance work has included [identity platform, such as SailPoint or Saviynt], access requests, approval workflows, separation-of-duties controls, access certifications, exception management, and remediation tracking. I measure outcomes such as [time to provision, time to disable a leaver, certification completion, manual effort, or audit findings] rather than reporting activity alone.",
+      "A project I would use as an example is [describe the target environment and business problem]. My responsibility was [implementation, design, operations, analysis, or leadership]. I [describe the actions taken and technologies used], and the result was [verified outcome, metric, and timeframe]."
     ],
-    closer: "Strong close: \"Governance is the discipline of keeping access accurate, least privileged, and auditable as the organization changes.\""
+    closer: "In the role, I would emphasize: \"Effective governance keeps access accurate, least privileged, reviewed, and provable as the organization changes.\""
   },
   {
     key: "iam",
@@ -805,14 +805,14 @@ const introPitches = [
     minutes: "~5 min",
     lead: "Lead with this for access-management roles (Okta, Entra, Ping, SSO/MFA, federation, Zero Trust).",
     paragraphs: [
-      "Access management controls how a user proves identity and enters applications. My experience covers single sign-on, MFA, federation, conditional access, and session management for [Okta / Entra ID / PingFederate].",
-      "For SAML federation, I examine the assertion, trust configuration, signing certificate, issuer, audience, recipient, response identifiers, and time values. For OAuth and OIDC, I separate authentication from authorization and validate the ID token and access token according to their intended use. I prefer a tested authorization flow with PKCE for public clients and short-lived credentials where appropriate.",
-      "MFA policy should be based on assurance and risk. I evaluate factors such as phishing-resistant FIDO2 or passkeys, device trust, user location, session risk, and the sensitivity of the requested resource. Legacy authentication should be disabled after business dependencies are understood and addressed.",
-      "A resilient identity provider requires capacity planning, health monitoring, certificate management, high availability, disaster recovery, and regular failover testing. Signing certificates, federation metadata, endpoints, and system clocks should be managed before they become outages.",
-      "Zero Trust is broader than MFA. It applies explicit verification to identity, device, context, and requested resources. Policies should combine least privilege, just-in-time access, strong authentication, and monitoring without adding unnecessary friction to low-risk activity.",
-      "My verified outcome for this area is [SSO coverage, MFA adoption, reduction in account takeover, legacy authentication removal, or recovery time]. The platform, measured result, and timeframe should come from my actual project history."
+      "My access management experience covers single sign-on, MFA, federation, conditional access, session management, and application onboarding using [Okta, Entra ID, PingFederate, or other verified platforms]. I focus on keeping authentication reliable while applying controls appropriate to each user's risk and the application's sensitivity.",
+      "For SAML integrations, I validate the trust relationship, assertion signature, signing certificate, issuer, audience, recipient, response identifiers, and time restrictions. For OAuth and OIDC, I distinguish authentication from authorization, validate the ID token and access token for their intended purpose, use Authorization Code with PKCE for public clients, and apply short token lifetimes and strict audience checks.",
+      "I design MFA according to risk rather than applying the same challenge to every sign-in. Phishing-resistant factors such as FIDO2 or passkeys are preferred where supported. Device trust, location, session risk, and application sensitivity may trigger step-up authentication or additional restrictions.",
+      "Certificate and federation operations are part of the design, not an after-hours task. I manage inventories, overlap certificates during rotation, monitor expiry, validate metadata, and test federation endpoints. The identity provider also requires capacity monitoring, high availability, disaster recovery, and regular failover testing.",
+      "I implement Zero Trust controls by verifying identity, device, context, and requested resource for each session or transaction. MFA, conditional access, just-in-time access, and least privilege reduce risk, while monitoring and clear troubleshooting procedures protect the user experience and availability.",
+      "A representative project is [describe the application or identity-provider initiative]. I worked on [scope and responsibilities], delivered [specific configuration or integration], and measured the outcome as [SSO coverage, MFA adoption, recovery time, account-takeover reduction, or another verified result]."
     ],
-    closer: "Strong close: \"Access management should provide a reliable user experience while preventing an attacker from impersonating a legitimate user. Authentication should be strong, and authorization should be precise.\""
+    closer: "In the role, I would emphasize: \"Good access management balances strong authentication, precise authorization, and a dependable user experience.\""
   },
   {
     key: "pam",
@@ -821,14 +821,14 @@ const introPitches = [
     minutes: "~5 min",
     lead: "Lead with this for privileged-access roles (CyberArk, Delinea, BeyondTrust, secrets, JIT).",
     paragraphs: [
-      "Privileged Access Management controls accounts with elevated permissions and sensitive secrets. The objective is to reduce standing privilege, prevent password exposure, monitor sessions, and rotate credentials automatically.",
-      "In a [CyberArk / BeyondTrust / Delinea] environment, I understand the relationship between credential storage, password management, privileged session management, access policy, and account owners. Accounts should be assigned to controlled safes or containers according to sensitivity and operational ownership.",
-      "Privileged account onboarding should begin with discovery and dependency mapping. Before rotation, I identify services, scheduled tasks, applications, and cached credentials that rely on the account. Where possible, I move applications to a credential provider or workload identity so secrets are retrieved at runtime.",
-      "High-risk accounts require additional controls. These may include approval, dual control, just-in-time elevation, session recording, command restrictions, one-time passwords, and immediate rotation after use. Privileged activity should be correlated with authentication, endpoint, and security monitoring data.",
-      "Standing access should be replaced with time-bound elevation wherever the platform supports it. Cloud privileges should prefer short-lived federated credentials, while automation should use managed workload identities rather than embedded secrets.",
-      "My verified outcome for this area is [number of accounts onboarded, percentage reduction in standing privilege, rotation coverage, or session-recording coverage]. I will state the actual platform, measurement period, and result from my experience."
+      "My privileged access experience covers credential storage, password rotation, session brokering, approval workflows, just-in-time elevation, secrets management, and privileged monitoring in [verified PAM platform]. The objective is to prevent standing privileges and exposed passwords while preserving access for authorized administrators.",
+      "I begin an account onboarding by discovering the account, identifying the owner, and mapping every service, scheduled task, application, or script that depends on it. Before rotating a credential, I assess cached passwords and runtime dependencies to avoid disrupting dependent services.",
+      "For a high-risk account, I configure appropriate controls such as managed credential check-out, approval, dual control, time-bound access, session recording, command filtering, and automatic password rotation. I also configure the target platform, network access, platform policy, safe or container permissions, and operational alerts.",
+      "A privileged session is only useful when it produces reliable evidence. I correlate session recordings, platform audit events, target logs, and security monitoring, then validate that a successful checkout, session, and credential rotation is recorded at each required layer.",
+      "For applications and automation, I prefer managed workload identities, credential providers, and short-lived secrets over embedded passwords. Standing cloud roles should be removed in favor of approval-gated and time-bound elevation where supported by the environment.",
+      "A representative PAM project is [describe the environment and problem]. I was responsible for [discovery, onboarding, policy, session management, integration, operations, or leadership]. The outcome was [accounts onboarded, rotation coverage, standing-privilege reduction, recording coverage, or another verified metric]."
     ],
-    closer: "Strong close: \"PAM is about assuming the powerful account will eventually be targeted — so I make sure the credential is never exposed, never standing, and never usable for long, and that every privileged action is on the record.\""
+    closer: "In the role, I would emphasize: \"Privileged access should be approved, time-bound, monitored, recorded, and rotated, with no unnecessary standing privilege.\""
   },
   {
     key: "icam",
@@ -837,14 +837,14 @@ const introPitches = [
     minutes: "~5 min",
     lead: "Lead with this for federal / public-sector roles (ICAM, FICAM, PIV/CAC, derived credentials, Zero Trust mandates).",
     paragraphs: [
-      "Identity, Credential, and Access Management, or ICAM, applies a common identity architecture and measurable assurance requirements across federal systems. It includes identity proofing, credential management, authentication, authorization, federation, governance, and continuous monitoring.",
-      "PIV and CAC credentials commonly use X.509 certificates stored on a hardware token. Certificate validation includes the trust chain, certificate policy, validity period, and revocation status through mechanisms such as OCSP or certificate revocation lists. Derived credentials may provide equivalent assurance on supported mobile devices.",
-      "I would select assurance levels according to the sensitivity of the transaction and the applicable federal policy. Identity proofing, credential binding, authentication strength, and federation assurance should be aligned rather than designed independently.",
-      "Access should be based on mission need, organizational attributes, roles, and least privilege. Federal controls also require separation of duties, documented exceptions, continuous monitoring, auditable decisions, and well-defined ownership.",
-      "Implementation should follow the applicable architecture and security requirements, including the FICAM guidance, NIST identity and credential standards, agency policy, and the current federal Zero Trust requirements. Architecture, configuration, testing, evidence, and plan-of-action documentation should support assessment and authorization.",
-      "My verified ICAM experience is [specific agency or mission environment, systems integrated, credential technology, federal policy areas, and measurable result]. I would discuss the scope accurately and avoid overstating work that I performed through commercial IAM without a federal environment."
+      "My ICAM experience is [describe your actual federal or public-sector scope, or state that your experience is primarily commercial]. ICAM connects identity proofing, credential management, authentication, authorization, federation, governance, and continuous monitoring under a defined assurance framework.",
+      "PIV and CAC credentials use X.509 certificates stored on a hardware device. Validation includes the certificate chain, certificate policy, validity period, hostname or identity mapping, and revocation status through OCSP or certificate revocation lists. Derived credentials can extend approved assurance to supported mobile or modern endpoints.",
+      "I select assurance levels according to the transaction and applicable federal requirements. Identity proofing, credential binding, authentication, federation, and authorization must support the same assurance objective rather than each being designed independently.",
+      "Access decisions are based on mission need, identity attributes, roles, and least privilege. Federal programs also require segregation of duties, documented exceptions, continuous monitoring, auditable decisions, defined ownership, and an approved authorization process.",
+      "My implementation approach follows the applicable agency architecture, the current FICAM guidance, relevant NIST standards, federal Zero Trust requirements, and security assessment and authorization procedures. I document architecture, configuration, testing, evidence, risks, and open remediation items.",
+      "A representative ICAM project is [agency or mission environment, systems, credentials, policies, and constraints]. My responsibility was [design, integration, engineering, operations, compliance, or leadership], and the result was [verified implementation, coverage, assessment, or operational outcome]."
     ],
-    closer: "Strong close: \"ICAM is commercial identity with the assurance dial turned all the way up — hardware-backed credentials, mandated assurance, and provable compliance — and I know how to deliver that without making it unusable.\""
+    closer: "In the role, I would emphasize: \"ICAM uses cryptographically strong credentials, defined assurance levels, least privilege, and documented evidence to support trusted access to federal systems.\""
   }
 ];
 
@@ -864,7 +864,7 @@ function renderIntro() {
     <div class="detail-hero intro-hero">
       <span class="eyebrow">PROFESSIONAL INTRODUCTION</span>
       <h1>My Introduction</h1>
-      <p>Four role-specific interview pitches. Replace the <b>[bracketed placeholders]</b> with your verified experience, products, company names, scale, and results.</p>
+      <p>Five role-specific interview pitches. Replace the <b>[bracketed placeholders]</b> with your verified experience, products, company names, scale, and results.</p>
     </div>
     <div class="intro-tabs" role="tablist">${nav}</div>
     <div class="intro-panels">${panels}</div>`;
