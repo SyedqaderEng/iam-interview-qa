@@ -57,12 +57,37 @@ String.prototype.toLowerName = function () { return this.toLowerCase(); };
 function renderNavigation() {
   const counts = topics.reduce((map, topic) => (map[topic.category] = (map[topic.category] || 0) + 1, map), {});
   const nav = document.getElementById("categoryNav");
-  nav.innerHTML = `<a href="#" data-nav="all" class="active"><span>All topics</span><span>${topics.length}</span></a>` +
-    Object.keys(categoryNames).filter(key => counts[key]).map(key =>
-      `<a href="#" data-nav="${key}"><span>${categoryNames[key]}</span><span>${counts[key]}</span></a>`).join("");
-  nav.querySelectorAll("a").forEach(link => link.addEventListener("click", event => {
-    event.preventDefault(); setCategory(link.dataset.nav); closeMenu();
+  nav.innerHTML = `<button type="button" class="sidebar-all active" data-nav="all"><span>All topics</span><span>${topics.length}</span></button>` +
+    Object.keys(categoryNames).filter(key => counts[key]).map(key => {
+      const categoryTopics = topics.filter(topic => topic.category === key);
+      return `<div class="sidebar-category" data-category="${key}">
+        <button type="button" class="category-parent" data-nav="${key}">
+          <span>${categoryNames[key]}</span><span>${counts[key]}</span>
+        </button>
+        <div class="sidebar-topics">
+          ${categoryTopics.map(topic => `<a href="#topic-${topic.number}" class="sidebar-topic" data-topic="${topic.number}"><span>${String(topic.number).padStart(3, "0")}</span><span>${topic.title}</span></a>`).join("")}
+        </div>
+      </div>`;
+    }).join("");
+
+  nav.querySelector("[data-nav='all']").addEventListener("click", event => {
+    event.preventDefault(); setCategory("all"); closeMenu();
+  });
+  nav.querySelectorAll(".category-parent").forEach(button => button.addEventListener("click", () => {
+    button.closest(".sidebar-category").classList.toggle("expanded");
+    setCategory(button.dataset.nav); closeMenu();
   }));
+  nav.querySelectorAll(".sidebar-topic").forEach(link => link.addEventListener("click", event => {
+    event.preventDefault();
+    openTopic(Number(link.dataset.topic));
+    closeMenu();
+  }));
+}
+
+function updateSidebarTopic(number) {
+  document.querySelectorAll(".sidebar-topic").forEach(link => {
+    link.classList.toggle("active", Number(link.dataset.topic) === number);
+  });
 }
 
 function renderTopics() {
@@ -96,7 +121,7 @@ topicGrid.addEventListener("keydown", event => {
 function setCategory(category) {
   activeCategory = category;
   document.querySelectorAll(".filter").forEach(button => button.classList.toggle("active", button.dataset.category === category));
-  document.querySelectorAll(".category-nav a").forEach(link => link.classList.toggle("active", link.dataset.nav === category));
+  document.querySelectorAll(".category-nav .sidebar-all, .category-nav .category-parent").forEach(link => link.classList.toggle("active", link.dataset.nav === category));
   closeTopic(); renderTopics();
   // Jump straight to the filtered topics so the user doesn't scroll past the hero.
   scrollToContent("topicGrid");
@@ -654,6 +679,9 @@ function labTabs(topic, steps) {
 function openTopic(number) {
   currentTopic = topics.find(topic => topic.number === number);
   if (!currentTopic) return;
+  updateSidebarTopic(number);
+  const categoryGroup = document.querySelector(`.sidebar-category[data-category="${currentTopic.category}"]`);
+  if (categoryGroup) categoryGroup.classList.add("expanded");
   history.pushState({ topic: number }, "", `#topic-${number}`);
   document.getElementById("topicGrid").hidden = true;
   document.getElementById("topicView").hidden = false;
@@ -745,6 +773,7 @@ function interviewAnswer(topic, steps) {
 }
 
 function closeTopic() {
+  updateSidebarTopic(null);
   history.replaceState({}, "", location.pathname + location.search);
   document.getElementById("topicGrid").hidden = false;
   document.getElementById("topicView").hidden = true;
