@@ -98,6 +98,21 @@ function setCategory(category) {
   document.querySelectorAll(".filter").forEach(button => button.classList.toggle("active", button.dataset.category === category));
   document.querySelectorAll(".category-nav a").forEach(link => link.classList.toggle("active", link.dataset.nav === category));
   closeTopic(); renderTopics();
+  // Jump straight to the filtered topics so the user doesn't scroll past the hero.
+  scrollToContent("topicGrid");
+}
+
+// Scroll an element into view, accounting for the sticky header + filter bar.
+function scrollToContent(elementId) {
+  requestAnimationFrame(() => {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    const header = document.querySelector(".topbar");
+    const filters = document.getElementById("filters");
+    const offset = (header && !header.hidden ? header.offsetHeight : 0) + (filters && !filters.hidden ? filters.offsetHeight : 0);
+    const top = element.getBoundingClientRect().top + window.scrollY - offset - 8;
+    window.scrollTo({ top: Math.max(top, 0), left: 0, behavior: "smooth" });
+  });
 }
 
 function cleanText(text) {
@@ -668,7 +683,7 @@ function renderDetail(level) {
     ${level === 1 ? simpleLevel(topic, steps) : ""}
     ${level === 2 ? technicalLevel(topic, steps) : ""}
     ${level === 3 ? seniorLevel(topic, steps) : ""}`;
-  document.querySelectorAll(".level-tab").forEach(button => button.addEventListener("click", () => renderDetail(Number(button.dataset.level))));
+  document.querySelectorAll(".level-tab").forEach(button => button.addEventListener("click", () => { renderDetail(Number(button.dataset.level)); scrollToContent("topicDetail"); }));
   document.getElementById("markButton").addEventListener("click", () => {
     localStorage.setItem(`iam-topic-${topic.number}`, "true"); updateProgress(); renderTopics();
     document.getElementById("markButton").textContent = "Reviewed ✓";
@@ -681,6 +696,8 @@ function renderDetail(level) {
       const target = tab.dataset.labtab;
       tabs.forEach(button => button.classList.toggle("active", button === tab));
       panels.forEach(panel => panel.classList.toggle("active", panel.dataset.labpanel === target));
+      // Keep the lab in view so the switched panel's content is visible.
+      requestAnimationFrame(() => lab.scrollIntoView({ block: "nearest", behavior: "smooth" }));
     }));
   });
 }
@@ -877,7 +894,8 @@ document.addEventListener("keydown", event => { if (event.key === "/" && documen
 document.getElementById("backButton").addEventListener("click", closeTopic);
 document.getElementById("introBack").addEventListener("click", closeTopic);
 document.getElementById("introLink").addEventListener("click", event => { event.preventDefault(); openIntro(); closeMenu(); });
-document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => setCategory(button.dataset.category)));
+document.getElementById("introFilter").addEventListener("click", () => { openIntro(); closeMenu(); });
+document.querySelectorAll(".filter[data-category]").forEach(button => button.addEventListener("click", () => setCategory(button.dataset.category)));
 document.getElementById("menuButton").addEventListener("click", () => { document.getElementById("sidebar").classList.add("open"); document.getElementById("scrim").classList.add("show"); });
 document.getElementById("closeButton").addEventListener("click", closeMenu);
 document.getElementById("scrim").addEventListener("click", closeMenu);

@@ -41,6 +41,8 @@ main { margin-left:250px; min-height:calc(100vh - 68px); }
 .filters { position:sticky; top:68px; z-index:20; overflow:auto; white-space:nowrap; padding:14px 5%; background:var(--surface); border-bottom:1px solid var(--line); }
 .filter { border:1px solid transparent; background:transparent; color:var(--muted); padding:7px 12px; margin-right:4px; }
 .filter.active { color:var(--ink); border-color:var(--line); background:var(--paper); }
+.filter-intro { color:var(--orange); font-weight:700; border-color:var(--orange); }
+.filter-intro.active { color:var(--surface); background:var(--orange); border-color:var(--orange); }
 .topic-grid { padding:28px 5% 70px; display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px; }
 .topic-card { min-height:178px; position:relative; background:var(--surface); border:1px solid var(--line); padding:20px; box-shadow:0 3px 12px rgba(31,41,64,.03); transition:.18s ease; cursor:pointer; }
 .topic-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); border-color:#b9c3cf; }
