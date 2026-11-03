@@ -1,0 +1,175 @@
+<mxfile host="app.diagrams.net" version="24.0.0" type="device">
+  <diagram id="transaction" name="1. IAM Transaction Model">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t-title" value="The core mental model: every IAM topic is ONE transaction" style="text;html=1;fontSize=16;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="t-a" value="Authoritative source&#10;(HR / trigger)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-b" value="IAM platform&#10;(identity + policy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-c" value="Policy / workflow&#10;evaluate + approve" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-d" value="Target system&#10;(app / directory / API)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-e" value="Logs &amp; audit&#10;reconcile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontColor=#4c1d95;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="120" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ab" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="t-a" target="t-b"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t-bc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="t-b" target="t-c"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t-cd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="t-c" target="t-d"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t-de" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="t-d" target="t-e"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="t-eb" value="reconciliation feedback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;dashed=1;fontSize=10;" edge="1" parent="1" source="t-e" target="t-b"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="framework" name="2. 7-Step Framework">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f-title" value="The 7-step framework behind every topic" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="1. What is it?&#10;plain definition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;" vertex="1" parent="1"><mxGeometry x="40" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f2" value="2. Why need it?&#10;business / security problem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;" vertex="1" parent="1"><mxGeometry x="210" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f3" value="3. How it works&#10;mechanism &amp; decisions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;" vertex="1" parent="1"><mxGeometry x="380" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f4" value="4. Architecture / flow&#10;systems + data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;" vertex="1" parent="1"><mxGeometry x="550" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f5" value="5. Configure&#10;settings, test, rollout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;" vertex="1" parent="1"><mxGeometry x="720" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f6" value="6. What goes wrong?&#10;failure modes &amp; risks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="890" y="120" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f7" value="7. Troubleshoot&#10;isolate hop, fix, re-test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="890" y="240" width="140" height="70" as="geometry" /></mxCell>
+        <mxCell id="f12" style="html=1;endArrow=block;" edge="1" parent="1" source="f1" target="f2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f23" style="html=1;endArrow=block;" edge="1" parent="1" source="f2" target="f3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f34" style="html=1;endArrow=block;" edge="1" parent="1" source="f3" target="f4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f45" style="html=1;endArrow=block;" edge="1" parent="1" source="f4" target="f5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f56" style="html=1;endArrow=block;" edge="1" parent="1" source="f5" target="f6"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f67" style="html=1;endArrow=block;" edge="1" parent="1" source="f6" target="f7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f75" value="lessons feed back" style="html=1;endArrow=block;dashed=1;fontSize=10;" edge="1" parent="1" source="f7" target="f5"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="saml" name="3. SAML SP-initiated SSO">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s-title" value="SAML 2.0 — SP-initiated SSO" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="500" height="30" as="geometry" /></mxCell>
+        <mxCell id="s-u" value="Browser / User" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="80" y="70" width="140" height="40" as="geometry" /></mxCell>
+        <mxCell id="s-sp" value="Service Provider (app)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="430" y="70" width="160" height="40" as="geometry" /></mxCell>
+        <mxCell id="s-idp" value="SAML Identity Provider" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="800" y="70" width="160" height="40" as="geometry" /></mxCell>
+        <mxCell id="s-ul" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="s-u"><mxGeometry relative="1" as="geometry"><mxPoint x="150" y="700" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="s-spl" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="s-sp"><mxGeometry relative="1" as="geometry"><mxPoint x="510" y="700" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="s-idpl" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="s-idp"><mxGeometry relative="1" as="geometry"><mxPoint x="880" y="700" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m1" value="1. Request protected resource" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="150" y="150" as="sourcePoint" /><mxPoint x="510" y="150" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m2" value="2. Redirect with AuthnRequest (ACS URL, ID, RelayState)" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="510" y="200" as="sourcePoint" /><mxPoint x="150" y="200" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m3" value="3. Deliver AuthnRequest to SSO URL" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="150" y="250" as="sourcePoint" /><mxPoint x="880" y="250" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m4" value="4. Authenticate user + evaluate MFA/policy" style="html=1;endArrow=block;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="880" y="300" as="sourcePoint" /><mxPoint x="960" y="300" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m5" value="5. Signed SAML assertion (HTTP-POST) + RelayState" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="880" y="360" as="sourcePoint" /><mxPoint x="150" y="360" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m6" value="6. POST assertion to ACS URL" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="150" y="410" as="sourcePoint" /><mxPoint x="510" y="410" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m7" value="7. Verify signature, issuer, audience, recipient, InResponseTo, timestamps" style="html=1;endArrow=block;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="510" y="470" as="sourcePoint" /><mxPoint x="590" y="470" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="m8" value="8. Create session, redirect to resource" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="510" y="530" as="sourcePoint" /><mxPoint x="150" y="530" as="targetPoint" /></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="oauth" name="4. OAuth / OIDC + PKCE">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o-title" value="OAuth 2.0 / OIDC — Authorization Code + PKCE" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry" /></mxCell>
+        <mxCell id="o-u" value="User" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="60" y="70" width="120" height="40" as="geometry" /></mxCell>
+        <mxCell id="o-c" value="Client app" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="330" y="70" width="140" height="40" as="geometry" /></mxCell>
+        <mxCell id="o-as" value="Authorization Server / IdP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="620" y="70" width="180" height="40" as="geometry" /></mxCell>
+        <mxCell id="o-api" value="Resource API" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;" vertex="1" parent="1"><mxGeometry x="950" y="70" width="140" height="40" as="geometry" /></mxCell>
+        <mxCell id="ol-u" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="o-u"><mxGeometry relative="1" as="geometry"><mxPoint x="120" y="760" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="ol-c" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="o-c"><mxGeometry relative="1" as="geometry"><mxPoint x="400" y="760" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="ol-as" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="o-as"><mxGeometry relative="1" as="geometry"><mxPoint x="710" y="760" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="ol-api" style="html=1;endArrow=none;dashed=1;" edge="1" parent="1" source="o-api"><mxGeometry relative="1" as="geometry"><mxPoint x="1020" y="760" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o1" value="1. /authorize (client_id, redirect_uri, scope, state, code_challenge)" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="400" y="150" as="sourcePoint" /><mxPoint x="710" y="150" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o2" value="2. Authenticate + consent" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="710" y="200" as="sourcePoint" /><mxPoint x="120" y="200" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o3" value="3. Approve" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="120" y="250" as="sourcePoint" /><mxPoint x="710" y="250" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o4" value="4. Redirect with authorization code + state" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="710" y="300" as="sourcePoint" /><mxPoint x="400" y="300" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o5" value="5. /token (code, client creds, code_verifier)" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="400" y="350" as="sourcePoint" /><mxPoint x="710" y="350" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o6" value="6. Validate grant + PKCE" style="html=1;endArrow=block;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="710" y="400" as="sourcePoint" /><mxPoint x="790" y="400" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o7" value="7. access_token (+ id_token for OIDC)" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="710" y="450" as="sourcePoint" /><mxPoint x="400" y="450" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o8" value="8. Authorization: Bearer access_token" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="400" y="500" as="sourcePoint" /><mxPoint x="1020" y="500" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o9" value="9. Validate signature, iss, aud, scope, exp" style="html=1;endArrow=block;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1020" y="550" as="sourcePoint" /><mxPoint x="1100" y="550" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="o10" value="10. 200 data / 401 invalid / 403 forbidden" style="html=1;endArrow=block;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="1020" y="600" as="sourcePoint" /><mxPoint x="400" y="600" as="targetPoint" /></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="scim" name="5. SCIM JML">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sc-title" value="SCIM provisioning — Joiner / Mover / Leaver" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry" /></mxCell>
+        <mxCell id="sc-hr" value="HR / authoritative source" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;" vertex="1" parent="1"><mxGeometry x="40" y="120" width="180" height="60" as="geometry" /></mxCell>
+        <mxCell id="sc-ps" value="Provisioning service&#10;(IdP / IGA)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="320" y="120" width="180" height="60" as="geometry" /></mxCell>
+        <mxCell id="sc-t" value="SCIM target app" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="600" y="120" width="180" height="60" as="geometry" /></mxCell>
+        <mxCell id="sc-map" value="Joiner = POST&#10;Mover = PATCH / PUT&#10;Leaver = PATCH active:false / DELETE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#6b7280;dashed=1;align=left;" vertex="1" parent="1"><mxGeometry x="320" y="260" width="280" height="80" as="geometry" /></mxCell>
+        <mxCell id="sce1" value="lifecycle event" style="html=1;endArrow=block;" edge="1" parent="1" source="sc-hr" target="sc-ps"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sce2" value="SCIM request" style="html=1;endArrow=block;" edge="1" parent="1" source="sc-ps" target="sc-t"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="sce3" value="2xx / 4xx-5xx" style="html=1;endArrow=block;dashed=1;exitX=0;exitY=0.25;entryX=1;entryY=0.75;" edge="1" parent="1" source="sc-t" target="sc-ps"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pam" name="6. PAM Flow">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p-title" value="PAM — privileged access flow (CyberArk pattern)" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry" /></mxCell>
+        <mxCell id="p-p" value="Privileged user / workload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="40" y="120" width="170" height="60" as="geometry" /></mxCell>
+        <mxCell id="p-pam" value="PAM broker&#10;(policy, approval, dual-control)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="300" y="120" width="190" height="60" as="geometry" /></mxCell>
+        <mxCell id="p-v" value="Vault / session manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;" vertex="1" parent="1"><mxGeometry x="580" y="120" width="180" height="60" as="geometry" /></mxCell>
+        <mxCell id="p-t" value="Target system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="850" y="120" width="160" height="60" as="geometry" /></mxCell>
+        <mxCell id="pe1" value="1. request access" style="html=1;endArrow=block;" edge="1" parent="1" source="p-p" target="p-pam"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="pe2" value="2. retrieve cred OR broker session" style="html=1;endArrow=block;" edge="1" parent="1" source="p-pam" target="p-v"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="pe3" value="3. connect (password never shown)" style="html=1;endArrow=block;" edge="1" parent="1" source="p-v" target="p-t"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="pe4" value="4. record session + command control" style="html=1;endArrow=block;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="p-v" target="p-v"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="pe5" value="5. rotate credential after use / on schedule" style="html=1;endArrow=block;" edge="1" parent="1" source="p-pam" target="p-t"><mxGeometry relative="1" as="geometry"><mxPoint x="395" y="280" as="sourcePoint" /><mxPoint x="930" y="280" as="targetPoint" /><Array as="points"><mxPoint x="395" y="360" /><mxPoint x="930" y="360" /></Array></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="incident" name="7. Incident Troubleshooting">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i-title" value="IAM incident troubleshooting — hop-by-hop isolation" style="text;html=1;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="40" y="20" width="600" height="30" as="geometry" /></mxCell>
+        <mxCell id="i-start" value="Symptom reported" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f3f4f6;strokeColor=#6b7280;" vertex="1" parent="1"><mxGeometry x="60" y="90" width="160" height="50" as="geometry" /></mxCell>
+        <mxCell id="i-scope" value="Record scope:&#10;who, since when, txn ID, impact" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="i-ev" value="Capture expected vs actual at each hop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="40" y="280" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="i-hops" value="Trace one transaction across hops" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#dc2626;verticalAlign=top;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="330" y="180" width="760" height="120" as="geometry" /></mxCell>
+        <mxCell id="h1" value="Client /&#10;browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="350" y="220" width="120" height="50" as="geometry" /></mxCell>
+        <mxCell id="h2" value="Network&#10;DNS / LB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="500" y="220" width="120" height="50" as="geometry" /></mxCell>
+        <mxCell id="h3" value="IAM&#10;service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="650" y="220" width="120" height="50" as="geometry" /></mxCell>
+        <mxCell id="h4" value="Connector /&#10;directory" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="800" y="220" width="120" height="50" as="geometry" /></mxCell>
+        <mxCell id="h5" value="Target&#10;system" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;" vertex="1" parent="1"><mxGeometry x="950" y="220" width="120" height="50" as="geometry" /></mxCell>
+        <mxCell id="i-iso" value="Isolate FIRST failed hop&#10;(compare to known-good user)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="330" y="360" width="240" height="60" as="geometry" /></mxCell>
+        <mxCell id="i-fix" value="Smallest reversible fix&#10;keep rollback path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="330" y="460" width="240" height="60" as="geometry" /></mxCell>
+        <mxCell id="i-retest" value="Re-test: success + denial + lifecycle + reconcile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="330" y="560" width="240" height="60" as="geometry" /></mxCell>
+        <mxCell id="i-doc" value="Document root cause &amp; prevention" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="640" y="560" width="240" height="60" as="geometry" /></mxCell>
+        <mxCell id="ie1" style="html=1;endArrow=block;" edge="1" parent="1" source="i-start" target="i-scope"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie2" style="html=1;endArrow=block;" edge="1" parent="1" source="i-scope" target="i-ev"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie3" style="html=1;endArrow=block;" edge="1" parent="1" source="i-ev" target="i-hops"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ieh1" style="html=1;endArrow=block;" edge="1" parent="1" source="h1" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ieh2" style="html=1;endArrow=block;" edge="1" parent="1" source="h2" target="h3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ieh3" style="html=1;endArrow=block;" edge="1" parent="1" source="h3" target="h4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ieh4" style="html=1;endArrow=block;" edge="1" parent="1" source="h4" target="h5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie4" style="html=1;endArrow=block;" edge="1" parent="1" source="i-hops" target="i-iso"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie5" style="html=1;endArrow=block;" edge="1" parent="1" source="i-iso" target="i-fix"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie6" style="html=1;endArrow=block;" edge="1" parent="1" source="i-fix" target="i-retest"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ie7" style="html=1;endArrow=block;" edge="1" parent="1" source="i-retest" target="i-doc"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

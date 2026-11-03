@@ -24,6 +24,9 @@
       <div><span class="eyebrow">Study library</span><strong id="topicCount">292 topics</strong></div>
       <button class="icon-button close-button" id="closeButton" aria-label="Close menu">×</button>
     </div>
+    <nav class="intro-nav" aria-label="Introduction">
+      <a href="#intro" id="introLink"><span>★ My Introduction</span><span>5 min</span></a>
+    </nav>
     <nav id="categoryNav" class="category-nav" aria-label="Topic categories"></nav>
   </aside>
 
@@ -59,9 +62,15 @@
       <button class="back-button" id="backButton">← All topics</button>
       <div id="topicDetail"></div>
     </section>
+
+    <section class="intro-view" id="introView" hidden>
+      <button class="back-button" id="introBack">← All topics</button>
+      <div id="introDetail"></div>
+    </section>
   </main>
 
   <div class="scrim" id="scrim"></div>
+  <script src="playbook-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
