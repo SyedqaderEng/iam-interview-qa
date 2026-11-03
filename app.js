@@ -796,7 +796,7 @@ const introPitches = [
       "Governance controls should include preventive separation-of-duties checks, periodic access certifications, exception approvals, and completed remediation. Audit evidence should show who requested access, who approved it, when it changed, what was fulfilled, and whether access was reviewed.",
       "My example result is [reduction in manual processing, improvement in provisioning time, or reduction in audit findings]. I would describe the specific tools, environment, and metrics from my own experience rather than presenting an estimated result as fact."
     ],
-    closer: "Strong close: \"So governance, to me, isn't a tool — it's the discipline of making access correct, least-privilege, and provable, and automating it so it stays that way as the organization changes.\""
+    closer: "Strong close: \"Governance is the discipline of keeping access accurate, least privileged, and auditable as the organization changes.\""
   },
   {
     key: "iam",
@@ -812,7 +812,7 @@ const introPitches = [
       "Zero Trust is broader than MFA. It applies explicit verification to identity, device, context, and requested resources. Policies should combine least privilege, just-in-time access, strong authentication, and monitoring without adding unnecessary friction to low-risk activity.",
       "My verified outcome for this area is [SSO coverage, MFA adoption, reduction in account takeover, legacy authentication removal, or recovery time]. The platform, measured result, and timeframe should come from my actual project history."
     ],
-    closer: "Strong close: \"Access management should provide a reliable user experience while making it difficult for an attacker to impersonate a user. Good authentication is seamless, and good authorization is precise.\""
+    closer: "Strong close: \"Access management should provide a reliable user experience while preventing an attacker from impersonating a legitimate user. Authentication should be strong, and authorization should be precise.\""
   },
   {
     key: "pam",
